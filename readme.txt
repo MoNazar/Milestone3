@@ -1,3 +1,22 @@
+Hallo Leute, 
+
+Bitte importiert neue Bibliotheken in der Datei bibliotheken.h und importiert anschlieÃŸend immer diese in eurer neuer datei. 
+
+Bisher habe ich die Aktivierungsfunktion implementiert. 
+
+Wichtige Aufgaben : 
+
+- Zufallszahlen generieren und diese in das Input Layer reinladen. (die Vektoren und Matrizen sind in VektorMatrix.h. 
+
+
+
+Unklarheiten: 
+
+- Wie genau lÃ¤uft die Berechnung von Layer 1 -> Layer 2 ab ? 
+
+
+
+
 /*
 
 Wichtige Notizen zum Projekt. 
@@ -10,9 +29,9 @@ Eingabeaggregation: bestimmt den neuen Ausgabevektor.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 Berechnung des Hidden Layers:
-Für jedes Layer entsteht ein neues Ausgabenvektor pvec. Die Einträge in pvec sind die neuen koeffizienten zur bestimmung der neuen gewichte.
-Wie wird dieses neue pvec bestimmt ? pvec(i) = f(xi) (die Berechnung des neuen Vektors entsteht koeffizient für koeffizient.
-Bestimmung der neuen Gewichte für Layer i + 1 : Hierzu wird der Ausgabevektor aus Layer i mit der Matrix von Layer i multipliziert. 
+FÃ¼r jedes Layer entsteht ein neues Ausgabenvektor pvec. Die EintrÃ¤ge in pvec sind die neuen koeffizienten zur bestimmung der neuen gewichte.
+Wie wird dieses neue pvec bestimmt ? pvec(i) = f(xi) (die Berechnung des neuen Vektors entsteht koeffizient fÃ¼r koeffizient.
+Bestimmung der neuen Gewichte fÃ¼r Layer i + 1 : Hierzu wird der Ausgabevektor aus Layer i mit der Matrix von Layer i multipliziert. 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 Output des Neuronalen Netzes: 
