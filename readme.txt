@@ -7,12 +7,19 @@ Bisher habe ich die Aktivierungsfunktion implementiert.
 Wichtige Aufgaben : 
 
 - Zufallszahlen generieren und diese in das Input Layer reinladen. (die Vektoren und Matrizen sind in VektorMatrix.h. 
-
+--> zufallszahlen sollen nicht in das input layer, sondern als kantengewichte eingegeben werden als Standardnormalverteilte Zahlen. diese Funktion müsste gehen:
+http://www.cplusplus.com/reference/random/normal_distribution/
+mit den parametern (0.0,1.0) für 0.0 = mean = Erwartungswert und 1.0 = standart deviation = Varianz 
 
 
 Unklarheiten: 
 
 - Wie genau läuft die Berechnung von Layer 1 -> Layer 2 ab ? 
+--> jedes Neuron des ersten Layer hat einen Wert (output des Neurons). Von diesem Neuron gehen Kanten zu jedem Knoten des nächsten Layers, und die Kanten haben unterschiedliche Gewichte (die wir vorher randomly vergeben haben). 
+Die Berechnung läuft dann so:
+für jeden Knoten in Layer 2 wird jeweils der Wert, multipliziert mit dem Knatengewicht des Knoten aus Layer 1, der auf den zu bestimmenden Knoten aus Layer 2 zeigt aufaddiert und am ende uU noch ein Bias addiert. der wert der dabei rauskommt, ist der wert, der in die Funktion gesteckt wird. Das Ergebnis ist der output für den Knoten in Layer 2.
+
+die Matrix mit den Kantengewichten wird also mit dem Vektor der Werte für Layer 1 multipliziert und jeder Eintrag des Ergebnisvektors dann in die Funktion gesteckt. das Ergebnis ist der output-vektor
 
 
 
