@@ -1,3 +1,36 @@
+----------------------------EINTRAG 09.01.2019 --------------------------------------------------------------------------------------------
+
+Habe gerade meine main.cpp gelöscht, die einzige main datei ist jetzt meilenstein3.cpp. Zur Übersichtlichkeit sind folgende Veränderungen vorgenommen worden:
+
+- meilenstein3.cpp enthält jetzt die Definitionen von der Funktion f und der Ableitung. aktivierungsfunktion.h löschen?
+- meilenstein3.cpp enthält jetzt auch die definition der Typen für die Vektoren der Layer - VektorMatrix.h löschen?
+- die klasse "neuron" gibt es auch zweimal, ich würde die eine die Momo gemacht hat weglassen, weil da teilweise mit Kantengewichten arbeitet, und das braucht man ander Stelle gar nicht. Und sonst sind die Klassen auch völlig gleich
+
+außerdem steht in den headern der Dateien manchmal #include "inputoutput.h", aber es gibt keine datei die so heißt, fehlt da was?
+
+
+----------------------------EINTRAG 09.01.2019 --------------------------------------------------------------------------------------------
+Ein Zwischenbericht. 
+
+Hallo Leute, ich habe jetzt einige Änderungen vorgenommen an dem Code und bitte euch diese zu beachten. 
+
+Bisher habe ich das Inputlayer fertig gemacht und die Klasse neuron.h sollte soweit auch ganz gut aussehen. 
+in der Datei vektormatrix.h findet ihr drei angelegte Datentypen, welche ich definiert habe für die Layer. 
+(Inputlayer, Hiddenlayer, Outputlayer). 
+
+In der main.cpp datei, habe ich ein inputlayer schon angelegt. Bitte beachtet, dass beim inputlayer die Aktivierungsfunktion nicht berücksichtigt wird und diese erst ab den nachkommenden Layers wichtig wird. 
+
+Welche Aufgaben wären als nächstes sinvoll ? 
+- wir brauchen jetzt die Matrix, welche die zufällig generierten, standart normalverteilten Zufallszahlen beinhaltet. (Zied seine aufgabe !).
+
+- In Aufgabe c ist nach der Verbindung der Kantengewichten gefragt, welches ein Neuron von Layer i-1 zu allen anderen Neuronen von Layer i 
+  hate. die Spalte1 der Matrix entspricht die Kantengewichte vom ersten Neuron in Layer i-1 zu allen Neuronen in Layer i usw...
+Meine bisherige Idee hierzu: 
+Alle Neuronen im Hiddenlayer besitzen ein Inputvector, dieser entspricht die Zeile der Matrix. Wir brauchen also einen Ansatz, indem wir die Zeile aus der Generierten Matrix extrahieren und als Vector einem Neuron im Hiddenlayer übergeben. 
+
+VORSICHT ! Wir haben 2 main.cpp dateien, einmal von Mascha (main.cpp), und einmal von mir(meilenstein3.cpp)
+
+
 Hallo Leute, 
 
 Bitte importiert neue Bibliotheken in der Datei bibliotheken.h und importiert anschließend immer diese in eurer neuer datei. 
@@ -47,26 +80,7 @@ Der Outpout des neuronalen Netzes ist ein Vektor !.
 */
 
 
-----------------------------EINTRAG 09.01.2019 --------------------------------------------------------------------------------------------
-Ein Zwischenbericht. 
 
-Hallo Leute, ich habe jetzt einige Änderungen vorgenommen an dem Code und bitte euch diese zu beachten. 
-
-Bisher habe ich das Inputlayer fertig gemacht und die Klasse neuron.h sollte soweit auch ganz gut aussehen. 
-in der Datei vektormatrix.h findet ihr drei angelegte Datentypen, welche ich definiert habe für die Layer. 
-(Inputlayer, Hiddenlayer, Outputlayer). 
-
-In der main.cpp datei, habe ich ein inputlayer schon angelegt. Bitte beachtet, dass beim inputlayer die Aktivierungsfunktion nicht berücksichtigt wird und diese erst ab den nachkommenden Layers wichtig wird. 
-
-Welche Aufgaben wären als nächstes sinvoll ? 
-- wir brauchen jetzt die Matrix, welche die zufällig generierten, standart normalverteilten Zufallszahlen beinhaltet. (Zied seine aufgabe !).
-
-- In Aufgabe c ist nach der Verbindung der Kantengewichten gefragt, welches ein Neuron von Layer i-1 zu allen anderen Neuronen von Layer i 
-  hate. die Spalte1 der Matrix entspricht die Kantengewichte vom ersten Neuron in Layer i-1 zu allen Neuronen in Layer i usw...
-Meine bisherige Idee hierzu: 
-Alle Neuronen im Hiddenlayer besitzen ein Inputvector, dieser entspricht die Zeile der Matrix. Wir brauchen also einen Ansatz, indem wir die Zeile aus der Generierten Matrix extrahieren und als Vector einem Neuron im Hiddenlayer übergeben. 
-
-VORSICHT ! Wir haben 2 main.cpp dateien, einmal von Mascha (main.cpp), und einmal von mir(meilenstein3.cpp)
 
 
 
