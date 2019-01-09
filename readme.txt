@@ -45,3 +45,28 @@ Output des Neuronalen Netzes:
 
 Der Outpout des neuronalen Netzes ist ein Vektor !. 
 */
+
+
+----------------------------EINTRAG 09.01.2019 --------------------------------------------------------------------------------------------
+Ein Zwischenbericht. 
+
+Hallo Leute, ich habe jetzt einige Änderungen vorgenommen an dem Code und bitte euch diese zu beachten. 
+
+Bisher habe ich das Inputlayer fertig gemacht und die Klasse neuron.h sollte soweit auch ganz gut aussehen. 
+in der Datei vektormatrix.h findet ihr drei angelegte Datentypen, welche ich definiert habe für die Layer. 
+(Inputlayer, Hiddenlayer, Outputlayer). 
+
+In der main.cpp datei, habe ich ein inputlayer schon angelegt. Bitte beachtet, dass beim inputlayer die Aktivierungsfunktion nicht berücksichtigt wird und diese erst ab den nachkommenden Layers wichtig wird. 
+
+Welche Aufgaben wären als nächstes sinvoll ? 
+- wir brauchen jetzt die Matrix, welche die zufällig generierten, standart normalverteilten Zufallszahlen beinhaltet. (Zied seine aufgabe !).
+
+- In Aufgabe c ist nach der Verbindung der Kantengewichten gefragt, welches ein Neuron von Layer i-1 zu allen anderen Neuronen von Layer i 
+  hate. die Spalte1 der Matrix entspricht die Kantengewichte vom ersten Neuron in Layer i-1 zu allen Neuronen in Layer i usw...
+Meine bisherige Idee hierzu: 
+Alle Neuronen im Hiddenlayer besitzen ein Inputvector, dieser entspricht die Zeile der Matrix. Wir brauchen also einen Ansatz, indem wir die Zeile aus der Generierten Matrix extrahieren und als Vector einem Neuron im Hiddenlayer übergeben. 
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
