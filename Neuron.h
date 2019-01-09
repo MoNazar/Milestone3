@@ -6,36 +6,21 @@
 // Aktivieirungsfunktion und die ableitung f(x) = (1+e^-x)^-1 
 
 
-#include "bibliotheken.h"
-
-
-
 class neuron {
 private:
-	float activation;   // the state the neuron is in = its value
-	float bias; 	// Neuron hat ein BIAS
-	float activation_function;
-	// Eingangswerte
-	// Ein Vektor importieren in das Neuron 
-	
+	//float bias = 1.0;
+	float aktivate1;
+	//float inputweight;
+
 public:
-	void getelements(vector<float> &inputvalues); // Werte des Vektors auslesen  
-	void berechnegewicht(float x); // aktivierungsfunktion  
-	void aktivierungsfunktion(float x); // Neuron hat eine Ausgabe 
-	void ableitung(float x);
-
-	// Neuron hat eingehende Kanten 
-	
-	//getter
-	double get_activation();
-	double get_bias();
-
-	//setter
-	void set_activation(float activation); 
-	void set_bias(float bias);
-	double set_activation_function(float activation_function);
-	
-
+	float bias ;
+	float inputweight; // Gewicht der Eingangskante. Dies ist der Einfluss der Neuronen aus dem vorherigen Layer auf ein einzelnes Neuron im neuen Layer.
+	void aktivate(float inputweight); // Sigmond funktion. Nimmt als Argument das Gewicht der Eingangskante.
+	void setinputweight(); // kantengewicht kann variabel gesetzt werden.
+	void setactive(float value); // xi kann variabel gesetzt werden.
+	void getactive(); // aktivierter Wert des Neurons. 
 
 	
+
+
 };
