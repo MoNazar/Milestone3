@@ -4,7 +4,8 @@ Habe gerade meine main.cpp gelöscht, die einzige main datei ist jetzt meilenste
 
 - meilenstein3.cpp enthält jetzt die Definitionen von der Funktion f und der Ableitung. aktivierungsfunktion.h löschen?
 - meilenstein3.cpp enthält jetzt auch die definition der Typen für die Vektoren der Layer - VektorMatrix.h löschen?
-- die klasse "neuron" gibt es auch zweimal, ich würde die eine die Momo gemacht hat weglassen, weil da teilweise mit Kantengewichten arbeitet, und das braucht man ander Stelle gar nicht. Und sonst sind die Klassen auch völlig gleich
+- die klasse "neuron" gibt es auch zweimal, ich würde die eine die Momo gemacht hat weglassen, 
+weil da teilweise mit Kantengewichten arbeitet, und das braucht man ander Stelle gar nicht. Und sonst sind die Klassen auch völlig gleich
 
 außerdem steht in den headern der Dateien manchmal #include "inputoutput.h", aber es gibt keine datei die so heißt, fehlt da was?
 
