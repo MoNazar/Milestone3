@@ -66,6 +66,9 @@ Welche Aufgaben wären als nächstes sinvoll ?
 Meine bisherige Idee hierzu: 
 Alle Neuronen im Hiddenlayer besitzen ein Inputvector, dieser entspricht die Zeile der Matrix. Wir brauchen also einen Ansatz, indem wir die Zeile aus der Generierten Matrix extrahieren und als Vector einem Neuron im Hiddenlayer übergeben. 
 
+VORSICHT ! Wir haben 2 main.cpp dateien, einmal von Mascha (main.cpp), und einmal von mir(meilenstein3.cpp)
+
+
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
