@@ -1,8 +1,18 @@
 #pragma once
 #include "bibliotheken.h"
 
-const constexpr auto size1 = 30; 
-float A[size1][size1];
+#include "inputoutput.h"
+#include "neuron.h"
 
-vector<float> inputvev;
-vector<float> outputvec; // ist p->
+// layers
+typedef vector<float> Hiddenlayer;
+typedef vector<float> inputlayer;
+typedef vector <float> outputlayer;
+
+inputlayer il;
+
+using namespace std;
+
+class vektormatrix {
+	void kantengewichte(); // Eine Matrix als eingabe und ein Outputvektor (Layer). Die Matrix wird mit dem Layer multipliziert und es entsteht ein neues Inputvector 
+};
