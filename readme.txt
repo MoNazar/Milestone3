@@ -1,3 +1,7 @@
+----------------------------EINTRAG 11.01.2019 --------------------------------------------------------------------------------------------
+Hallo Leute, 
+
+die Änderungen, wie mascha sie vorgeschlagen hat wurden übernommen. Jetzt sollten keine doppelten Datein und überflüssige Datein vorhanden sein.
 ----------------------------EINTRAG 09.01.2019 --------------------------------------------------------------------------------------------
 
 Habe gerade meine main.cpp gelöscht, die einzige main datei ist jetzt meilenstein3.cpp. Zur Übersichtlichkeit sind folgende Veränderungen vorgenommen worden:
