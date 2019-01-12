@@ -1,3 +1,16 @@
+----------------------------EINTRAG 12.01.2019 --------------------------------------------------------------------------------------------
+
+Hallo, 
+
+die Änderrungen dürften jetzt gelten. 
+
+ACHTUNG!
+- wegen der Übersichtlichkeit habe ich nun eine layer.h datei eingefügt. Die Layers werden also da definiert.
+- typedef vector<neuron> vectorneurons ist ein Vektor aus allen neuronen aus dem bestimmten layer (wichtig für die Verbindung und viele andere coole Dinge)
+- Die Eingabeaggregation wie auf den Folien beschrieben habe ich auch in der meilenstein3.cpp unten definiert. 
+- Mein Ansatz für die Verbindung (Aufgabe 1c) ist jetzt nicht optimal, aber er klappt ! für jede neu entstandene weight klasse und jedes Layer dazu, muss die Verbindung auf dieser Art folgen. (wie gesagt: es klappt und ist nicht die geschickteste Lösung.) 
+
+
 ----------------------------EINTRAG 11.01.2019 --------------------------------------------------------------------------------------------
 Hallo Leute, 
 
