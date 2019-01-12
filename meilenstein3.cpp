@@ -1,24 +1,20 @@
 // meilenstein3.cpp : Diese Datei enthält die Funktion "main". Hier beginnt und endet die Ausführung des Programms.
 //
-#include "inputoutput.h"
-#include "vektormatrix.h"
-#include "functions.h"
+
 #include <string>
 #include <iostream>
 #include <math.h>
 #include <vector>
 #include "neuron.h"
 #include "weight.h"
+#include layer.h
 
 using namespace std;
 	
 	
 // Der Anfang des ganzen. 
 // Idee: Wir erstellen anfangs, ein Input Layer. Dazu erstellen wir eine offene Topologie mit 4 neuronen zu anfang. 
-// store layers as vectors
-typedef vector<double> Hiddenlayer;
-typedef vector<double> inputlayer;
-typedef vector <double> outputlayer;
+
 
 // creating a vector to store the values of the input layer
 inputlayer il;
@@ -101,6 +97,37 @@ int main() {
 
     // applying function f to the input value of a neuron
     neuron1.set_activation_function(f(a));
+	
+	
+	
+   // connection 
+
+	// Verbindung von einem Neuron zu allen anderen Neuronen des nächsten Layers
+	Hiddenlayer H1; // Layer 2 , nächstes Layer
+	neuron n5; neuron n6; neuron n7; neuron n8;
+	vectorneurons v1;
+	v1.push_back(n5); v1.push_back(n6); v1.push_back(n7); v1.push_back(n8);
+	
+	
+	float newvalue = 0.0;
+	// Setactivation == Eingabeaggregation
+	// Hier werden alle neue "activation" werte für das neue Layer berechnet. 
+	for (int j = 0; j < v1.size(); j++) {
+		for (int i = 0; i < il.size(); i++) {
+			newvalue = newvalue + (il[i] * weight1.get_weight(j, i));
+
+		}
+		v1[j].set_activation(newvalue);
+		
+
+	}
+	for (int i = 0; i < v1.size(); i++) {
+		cout << v1[i].get_activation() << endl;
+	}
+	
+
+	
+	printf("\n");
 		
     system("pause");
     return 0;
