@@ -1,3 +1,14 @@
+----------------------------EINTRAG 13.01.2019(momo)----------------------------------------------------------------------------------------
+Hi, 
+
+es ist jetzt die neue datei connection.h dazugekommen. Diese erwartet als eingabe ein inputlayer, ein Hiddenlayer(hier haben die Neuronen noch kein gewicht), und die entsprechende Matrix, die zwischen den layers erstellt wird mithilfe der klasse weight.h. Nachdem die Funktion aufgerufen wurde, wird den Neuronen aus hiddenlayer die neuen werte zugeordnet. Aufrufbeispiel: connect(inputlayer, matrix, hiddenlayer);
+
+In neural_net.h sind drei neue funktionen dazugekommen. generate_inputlayer(); generate_hiddenlayer(); generate_outputlayer(); 
+Die layer werden mit neuronen gefüllt, welche bereits mithilfe von bereits erstellten layer aus layer.h gefüllt werden. 
+
+So dürften folgende dinge klappen: 
+- neuronales netz erstellen mit einer vorgegebenen Topologie
+- die verbindung der Layer 
 ----------------------------EINTRAG 13.01.2019 --------------------------------------------------------------------------------------------
 
 Hallo Leute, 
