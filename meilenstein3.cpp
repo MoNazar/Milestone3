@@ -17,8 +17,7 @@ using namespace std;
 // Idee: Wir erstellen anfangs, ein Input Layer. Dazu erstellen wir eine offene Topologie mit 4 neuronen zu anfang. 
 
 
-// creating a vector to store the values of the input layer
-inputlayer il;
+
 	
 // the activation function we use to calculate the output of a layer
 double f(double x) {
