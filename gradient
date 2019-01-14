@@ -1,47 +1,42 @@
-//
-// der Gradient eines Layers ist die Steigung der Kurve für die Fehlerrate.
-// die Fehlerrate ist die Summe aller differenzen zwischen dem Outputlayer
-// und dem Wert, wie er richtig wäre zum Quadrat. Zum Beispiel:
-//
-// Outputs der Neuronen     Soll-Wert
-// Neuron1     0.33              0
-// Neuron2     0.12              1
-// Neuron3     0.23              0
-//
-// Die Fehlerrate fur dieses Netz ist dann: (0.33 - 0)^2  +  (0.12 - 1)^2  +  (0.23 - 0)^2
-// Die Fehlerrate ändert sich, wenn man die Kantengewichte zwischen den Layer verändert. Wenn die Fehlerrate
-// klein ist, erkennt das Netz die Werte gut, ist der Wert hoch ist das Netz schlecht.
-//
-// Außerdem gibt es eine Lernrate, die bestimmt, wie groß die Schritte für die Veränderungen
-// der Kantengewichte sein sollen, die man selbst bestimmen kann (ein Wert zwischen 10 und 0.0001).
-// Es ist üblich mit einer hohen Lernrate zu beginnen, die dann während des Trainings verringert wird (= Trägheit).
-// Der Gradient ist von beiden Werten, also der Fehlerrate und der Lernrate anhängig.
-//
-// die Veränderung des gewichtes einer Kante wird für jedes Neuron des output-layers berechnet als:
-// 2 * Lernrate * (erwarteter_wert - f(tatsächlicher_wert = output)) * f'(output) * output_neuron_aus_layer-1
-//
-// der Gradient von einem neuron im output layer ist:
-//(erwarteter_wert - f(tatsächlicher_wert = output)) * f'(output) * output_neuron_aus_layer-1
-//
-//
-// Angenommen das erste Neuron des Layers vor dem output Layer hat den Wert 0.157
-// und das erste Neuron des Output-Layers hat den wert 0.33, wobei der
-// zu erwartende Wert = 0 ist. Dann wird das neue Gewicht der
-// Kante zwischen diesen beiden Neuronen bei einer Lernrate von 5 folgendermaßen berechnet:
-//
-// 2 * 5 * (0 - f(0.33)) * Ableitung_von_f(0.33) * 0.157
-//
-// für ein hidden layer werden die kanten folgendermaßen verändert:
-// 2* Lernrate * (Summe aus: alle erwarteten werte - alle tatsächlichen werte output layer) * f'(output) * kantengewicht der kante von hidden layer nach output layer * f'(output hidden layer) * input hidden layer
-//
-// die Formel ist auch bei den Folien für Plenartermin 4 dabei.
-// t steht da für target, also der erwartete Wert für den output (0 oder 1)
-// eta steht für die Lernrate (kann man selbst festlegen)
-// x ist der tatsächliche output wert
-// a ist der output von dem neuron ein layer vorher (also der input)
-// w ist das kantengewicht
-//
+#include <iostream>
+#include <math.h>
+using namespace std;
 
+// calculate alternation rate for an edge weight between a neuron in the output layer and another one in hidden layer
+double gradient_output_layer(double eta, double target, double actual, double input){
+
+    // activation function:
+    double activation_function = pow(1 + exp(-actual), -1);
+
+    // derivative:
+    double derivative = exp(-actual) / pow(exp(-actual) + 1, 2);
+    double gradient = 2 * eta * (target - activation_function) * derivative * input;
+
+    return gradient;
+}
+
+// calculate alternation rate for an edge between a neuron in an input layer (which also can be a hidden layer) and a
+// hidden layer. The three vectors given as parameters are:
+// target_values = the values the neural net should have as output for the state it is in
+// actual_values = the output values of the neural net
+// weights = the edge weights between on neuron in the hidden layer to all the neurons in the output layer
+double gradient_hiddenlayer(vector<double> target_values, vector<double> actual_values, vector<double> weights,
+        double eta, double target, double actual, double input){
+
+    double sum = 0;
+    for(int i = 0; i < target_values.size(); i++) {
+        double error_rate = target_values[i] - pow(1 + exp(-actual_values[i]), -1)
+                * (exp(-actual_values[i]) / pow(exp(-actual_values[i]) + 1, 2))
+                    * weights[i];
+
+        sum += error_rate;
+    }
+    // derivative:
+    double derivative = exp(-actual) / pow(exp(-actual) + 1, 2);
+    double gradient = 2 * eta * sum * derivative * input;
+    
+    return gradient;
+}
 
 
 
