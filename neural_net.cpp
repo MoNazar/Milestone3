@@ -54,3 +54,26 @@ void neural_net::set_up_network(vector<double> input_values) {
 
     }
 }
+
+// diese funktion weist einem vektor neuronen-objekte zu. als parameter kann ein inputlayer vektor gnommen werden
+
+void neural_net::generatelayer_inputlayer(inputlayer input) {
+	for (int i = 0; i < number_of_neurons_input_layer; i++) {
+		neurons_input_layer.push_back(input[i]);
+		
+	}
+}
+
+void neural_net::generatelayer_outputlayer(inputlayer input1) {
+		for (int i = 0; i < number_of_neurons_output_layer; i++) {
+			neurons_output_layer.push_back(input1[i]);
+
+		}
+}
+
+void neural_net::generatelayer_hiddenlayer(inputlayer input2) {
+	for (int i = 0; i < number_of_hidden_layers; i++) {
+		neurons_hidden_layer.push_back(input2[i]);
+	}
+}
+
