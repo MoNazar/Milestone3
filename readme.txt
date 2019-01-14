@@ -1,3 +1,11 @@
+----------------------------EINTRAG 13.01.2019 --------------------------------------------------------------------------------------------
+
+Hallo Leute, 
+
+ich habe die Datei, um die Gradienten zu berechnen jetzt erstellt. damit sollte Aufgabe 1 tatsächlich ganz fertig sein, und wir können mit der Berechnung der Output Werte und der Backpropagation anfangen. 
+
+Mascha
+
 ----------------------------EINTRAG 12.01.2019 --------------------------------------------------------------------------------------------
 
 Hallo, 
