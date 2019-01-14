@@ -2,7 +2,11 @@
 #include <math.h>
 using namespace std;
 
-// calculate alternation rate for an edge weight between a neuron in the output layer and another one in hidden layer
+
+
+// calculate alternation rate for an edge weight between a neuron in 
+// the output layer and another one in hidden layer
+
 double gradient_output_layer(double eta, double target, double actual, double input){
 
     // activation function:
@@ -15,11 +19,14 @@ double gradient_output_layer(double eta, double target, double actual, double in
     return gradient;
 }
 
+
+
 // calculate alternation rate for an edge between a neuron in an input layer (which also can be a hidden layer) and a
 // hidden layer. The three vectors given as parameters are:
 // target_values = the values the neural net should have as output for the state it is in
 // actual_values = the output values of the neural net
 // weights = the edge weights between on neuron in the hidden layer to all the neurons in the output layer
+
 double gradient_hiddenlayer(vector<double> target_values, vector<double> actual_values, vector<double> weights,
         double eta, double target, double actual, double input){
 
