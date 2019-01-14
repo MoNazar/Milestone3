@@ -8,6 +8,7 @@
 #include "neuron.h"
 #include "weight.h"
 #include layer.h
+#include "connections.h"
 
 using namespace std;
 	
