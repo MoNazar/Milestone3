@@ -41,6 +41,11 @@ public:
     void set_number_of_neurons_output_layer(int number_of_neurons_output_layer);
 
     void set_up_network(vector<double> input_values);
+    
+    //generate Layer while using tpology
+	void generatelayer_inputlayer(inputlayer input);
+	void generatelayer_hiddenlayer(inputlayer input); 
+	void generatelayer_outputlayer(inputlayer input);
 
 };
 
