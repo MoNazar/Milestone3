@@ -1,3 +1,15 @@
+----------------------------Eintrag 15.01.2019(momo)-------------------------------------------------------------------------------------
+Hallo leute, 
+
+die Connection.h datei entfällt und die funktion wird in der klasse neural_net.h festgehalten. 
+
+bis jetzt gibt es ein hiddenlayer. d.h. wir berechnen (1): inputlayer -> hiddenlayer ; (2): hiddenlayer -> outputlayer
+(1): funktion connected() in neural_net.h berechnet dies mit der matrix "matrix_of_edgeweights_between_layers" 
+(2): funktion connected1() in neural_net.h berechnet dies mit der matrix "matrix_of_edgeweights_between_hiddenlayer_and_outputlayer"
+
+mit void get_outputlayer(); ist die aufgabe 2.b erledigt sein. 
+mit dem Manöwer in meilenstein3.cpp (ganz unten ab //-------------------NeuralNet----------------------------) ist die 2.c erledigt sein
+
 ----------------------------EINTRAG 13.01.2019(momo)----------------------------------------------------------------------------------------
 Hi, 
 
