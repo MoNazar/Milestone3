@@ -1,3 +1,17 @@
+----------------------------Eintrag 16.01.2019(Mascha)-------------------------------------------------------------------------------------
+Hi Leute, 
+
+Momo, sehr gut gemacht! Das tut was es soll, nur noch ein paar kleine Änderungen müssen wir machen:
+1. die Berechnung des nachsten Layers wird nicht nur durch die addition aller Produkte von Neuron und Kantengewicht erstellt, das Ergebnis davon ist dann der Input für die Aktivierungsfunktion. das heißt es muss in der neural_net klasse in der connect und connect1 methode noch die Variable Influence in die Aktivierungsfunktion gesteckt werden, das ist dann das output für das layer.
+
+2. Im hiddenlayer und im input layer muss jeweils noch ein neuron für den bias in den vektor rein gespeichert werden. auch in der matrix für die kantengweichte muss eine spalte und zeile für den bias hinzugefügt werden.
+
+
+außerdem todo:
+// vektor erstellen für die target-werte, das heißt welcher Wert bei einem bestimmten Input als Output rauskommen soll (braucht man für backpropagation)
+// funktion back implementieren für die backpropagation
+// evtl koennten wir eine if-abfrage machen, ob die topologie ein zweites hidden layer vorsieht und dann ein zweites implementieren
+
 ----------------------------Eintrag 15.01.2019(momo)-------------------------------------------------------------------------------------
 Hallo leute, 
 
