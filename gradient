@@ -1,10 +1,13 @@
+#ifndef MILESTONE3_GRADIENT_H
+#define MILESTONE3_GRADIENT_H
 #include <iostream>
 #include <math.h>
+#include <vector>
 using namespace std;
 
 
 
-// calculate alternation rate for an edge weight between a neuron in 
+// calculate alternation rate for an edge weight between a neuron in
 // the output layer and another one in hidden layer
 
 double gradient_output_layer(double eta, double target, double actual, double input){
@@ -28,22 +31,51 @@ double gradient_output_layer(double eta, double target, double actual, double in
 // weights = the edge weights between on neuron in the hidden layer to all the neurons in the output layer
 
 double gradient_hiddenlayer(vector<double> target_values, vector<double> actual_values, vector<double> weights,
-        double eta, double target, double actual, double input){
+                            double eta, double target, double actual, double input){
 
     double sum = 0;
     for(int i = 0; i < target_values.size(); i++) {
         double error_rate = target_values[i] - pow(1 + exp(-actual_values[i]), -1)
-                * (exp(-actual_values[i]) / pow(exp(-actual_values[i]) + 1, 2))
-                    * weights[i];
+                                               * (exp(-actual_values[i]) / pow(exp(-actual_values[i]) + 1, 2))
+                                               * weights[i];
 
         sum += error_rate;
     }
     // derivative:
     double derivative = exp(-actual) / pow(exp(-actual) + 1, 2);
     double gradient = 2 * eta * sum * derivative * input;
-    
+
     return gradient;
+}
+
+vector<int> target_values(int target, vector<double> output_layer){
+    vector<int> target_values;
+    for(int i = 0; i < output_layer.size(); i++ ){
+        target_values.push_back(0);
+    }
+    target_values[target] = 1;
+    return target_values;
 }
 
 
 
+vector<double> back(vector<int> target_value, vector<double> hiddenlayer_values, vector<double> inputlayer_values,
+                            vector<double> weights, vector<double> outputlayer_values,
+                            double eta, double alpha) {
+    double delta_weight_0 = 0.0;
+    double delta_weight_1 = 0.0;
+    for (int i = 0; i < hiddenlayer_values.size(); i++) {
+        for (int j = 0; j < inputlayer_values.size(); j++) {
+            double grad = gradient_output_layer(eta, target_value[i], outputlayer_values[i], hiddenlayer_values[j]);
+            delta_weight_1 = (1-alpha) * grad + alpha * delta_weight_0;
+            weights[i*j] += delta_weight_1;
+        }
+    }
+    return weights;
+}
+
+
+
+
+
+#endif //MILESTONE3_GRADIENT_H
