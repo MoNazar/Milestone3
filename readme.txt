@@ -1,3 +1,11 @@
+----------------------------Eintrag 16.01.2019(Zied)---------------------------------------------------------------------
+Save() Funktion in Neural_net speichert das Netz in einem text Datei.
+Ich habe ein KonsoleProgramm erstellt, man kann etweder ein Netz erstellen oder Datei importieren oder lesen.
+Man sollte der Anzahl von Neuronen und die Gewichte eingeben, das Programm speichert das Ergebnis in ouput.txt automatisch.
+Ouput.txt hat diese Form z.B : 
+4 Neurons Input  Layer : 0.660000 || 0.330000 || 0.440000 || 0.270000 ||  
+4 Neurons Hidden Layer : -0.135469 || 0.901697 || 0.009880 || -0.006568 ||  
+3 Neurons Output Layer : -0.183544 || -0.332628 || -0.727383 || 
 ----------------------------Eintrag 16.01.2019(Mascha)-------------------------------------------------------------------------------------
 Hi Leute, 
 
