@@ -3,6 +3,9 @@
 #include "neuron.h"
 #include "weight.h"
 #include "layer.h"
+#include <fstream>
+#include <string>
+#include <sstream>
 //#include "connection.h"
 
 #include <iostream>
@@ -32,6 +35,11 @@ public:
 	int get_number_of_neurons_input_layer();
 	int get_number_of_neurons_hidden_layer();
 	int get_number_of_neurons_output_layer();
+	
+	
+	std::string save_input1 = "";
+	std::string save_input2 = "";
+	std::string save_input3 = "";
 
 	// setter
 	void set_number_of_hidden_layers(int number_of_hidden_layers);
@@ -54,6 +62,8 @@ public:
 	void connected(); // connection input_layer -> hidden_layer
 	void connected1(); // connection hidden_layer -> outputlayer
 	void generatematrix1();
-	void getmatrix();
+	void getmatrix();	
+	//Save in file
+	void save();
 
 };
