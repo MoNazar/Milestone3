@@ -143,3 +143,22 @@ void neural_net::connected1(){
 
 
 
+void neural_net::save(){
+
+	ofstream myfile;                        // Openfile
+	myfile.open ("output.txt");
+	for (int j = 0; j < 3; j++) {
+		if (j == 0) {
+			myfile << save_input1+ " \n";
+		}
+		if (j == 1) {
+			myfile << save_input2+ " \n";
+		}
+		if (j == 2) {
+			myfile << save_input3+ " \n";
+		}
+
+	}
+	myfile.close();
+}
+
