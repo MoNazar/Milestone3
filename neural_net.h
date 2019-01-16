@@ -3,6 +3,9 @@
 #include "neuron.h"
 #include "weight.h"
 #include "layer.h"
+#include <fstream>
+#include <string>
+#include <sstream>
 //#include "connection.h"
 
 #include <iostream>
