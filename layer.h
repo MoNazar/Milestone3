@@ -2,9 +2,9 @@
 #include <vector>
 #include "neuron.h"
 using namespace std;
-typedef vector<double> Hiddenlayer;
-typedef vector<double> inputlayer;
-typedef vector <double> outputlayer;
+typedef vector<neuron> Hiddenlayer;
+typedef vector<neuron> inputlayer;
+typedef vector <neuron> outputlayer;
 
 typedef vector<neuron> vectorneurons;
 
