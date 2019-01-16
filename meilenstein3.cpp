@@ -143,6 +143,39 @@ int main() {
 		ann.connected1();
 		// Get outputlayer
 		ann.getlayer_output();
+		    // to calculate the gradient between the layers, we first establish a vector of the known output.
+    // parameters are one integer of the index of the neuron that should have an output == 1,
+    // and a vector of the output layer.
+    double eta = 0.1;
+    double alpha = 0.5;
+    vector<int> target = target_values(2, ann.getlayer_output());
+
+    vector<double> hidden = ann.getlayer_hidden();
+    vector<double> input = ann.getlayer_input();
+    vector<double> output = ann.getlayer_output();
+    vector<double> weights;
+
+    for (int j = 0; j < ann.get_number_of_neurons_output_layer(); j++){
+        for(int i = 0; i < ann.get_number_of_neurons_hidden_layer(); i++){
+            weights.emplace_back(ann.matrix_of_edgeweights_between_hiddenlayer_and_outputlayer.get_weight(j, i));
+            }
+        }
+
+    for (int i = 0; i < weights.size(); i++) {
+            cout << weights[i] << endl;
+    }
+
+
+
+    weights = back(target, hidden, input, weights, output, eta, alpha);
+    for (int i = 0; i < weights.size(); i++){
+        for(int j = 0; j < ann.get_number_of_neurons_output_layer(); j++){
+            cout << ann.matrix_of_edgeweights_between_hiddenlayer_and_outputlayer.get_weight(i, j);
+            ann.matrix_of_edgeweights_between_hiddenlayer_and_outputlayer.set_weight(i, j, weights[i*j]);
+            cout << ann.matrix_of_edgeweights_between_hiddenlayer_and_outputlayer.get_weight(i, j);
+        }
+    cout << endl;
+    }
 		ann.save();
 		main();
 	}
