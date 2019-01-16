@@ -26,7 +26,9 @@ public:
 	weight matrix_of_edgeweights_between_layers;
 	weight matrix_of_edgeweights_between_hiddenlayer_and_outputlayer;
 
-	
+	std::string save_input1 = "";
+	std::string save_input2 = "";
+	std::string save_input3 = "";
     // getter
 	int get_number_of_hidden_layers();
 	int get_number_of_neurons_input_layer();
@@ -55,5 +57,8 @@ public:
 	void connected1(); // connection hidden_layer -> outputlayer
 	void generatematrix1();
 	void getmatrix();
+		//Save in file
+	void save();
+
 
 };
