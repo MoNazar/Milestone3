@@ -16,6 +16,8 @@ public:
     void set_activation(double activation);
     void set_bias(double bias);
     double set_activation_function(double activation_function);
+    double set_derivative(double deviative);
+
 };
 
 
