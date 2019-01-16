@@ -57,14 +57,15 @@ void neural_net::generatelayer_inputlayer(inputlayer input) {
         neurons_input_layer.push_back(input[i]);
 
     }
-    //neuron bias;
-    //neurons_input_layer.push_back(bias);
+    neuron bias;
+    bias.set_activation(1.0);
+    neurons_input_layer.push_back(bias);
+
 }
 
 void neural_net::generatelayer_outputlayer(inputlayer input1) {
-    for (int i = 0; i < number_of_neurons_output_layer; i++) {
+    for (int i = 0; i <= number_of_neurons_output_layer; i++) {
         neurons_output_layer.push_back(input1[i]);
-
     }
 }
 
@@ -72,8 +73,9 @@ void neural_net::generatelayer_hiddenlayer(inputlayer input2) {
     for (int i = 0; i < number_of_neurons_hidden_layer; i++) {
         neurons_hidden_layer.push_back(input2[i]);
     }
-    //neuron hiddenbias;
-    //neurons_hidden_layer.push_back(hiddenbias);
+    neuron hiddenbias;
+    hiddenbias.set_activation(1.0);
+    neurons_hidden_layer.push_back(hiddenbias);
 }
 
 vector<double> neural_net::getlayer_input() {
