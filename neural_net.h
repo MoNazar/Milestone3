@@ -50,9 +50,9 @@ public:
 	void generatelayer_outputlayer(inputlayer input);
 
 	//get Layer 
-	void getlayer_input();
-	void getlayer_hidden();
-	void getlayer_output(); // returns all results of outputlayer, Aufgabe 2.b
+	vector<double> getlayer_input();
+	vector<double> getlayer_hidden();
+	vector<double> getlayer_output(); // returns all results of outputlayer, Aufgabe 2.b
 
 	//Connection of neurons
 	void generatematrix();
