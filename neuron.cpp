@@ -1,5 +1,9 @@
 #include "neuron.h"
 
+neuron::neuron(){
+// constructor
+}
+
 double neuron::get_activation(){
     return activation;
 }
@@ -18,5 +22,9 @@ void neuron::set_bias(double bias) {
 
 double neuron::set_activation_function(double activation_function){
     this -> activation_function = activation_function;
+}
+
+double neuron::set_derivative(double derivative) {
+    this -> derivative = derivative;
 }
 
