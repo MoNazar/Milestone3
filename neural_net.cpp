@@ -1,4 +1,7 @@
 #include "neural_net.h"
+#include <fstream>
+#include <string>
+#include <sstream>
 
 #include <iostream>
 using namespace std;
@@ -74,25 +77,39 @@ void neural_net::generatelayer_hiddenlayer(inputlayer input2) {
 }
 
 void neural_net::getlayer_input() {
+	save_input1 = to_string(neurons_input_layer.size()) + " Neurons Input  Layer : ";
 	for (int i = 0; i < neurons_input_layer.size(); i++) {
+		cout << "Neurons Input Layer :"<< endl;
 		cout << neurons_input_layer[i].get_activation() << endl;
+		save_input1 = save_input1 + to_string(neurons_input_layer[i].get_activation()) + " || ";
 		
 	}
 }
 
 void neural_net::getlayer_hidden() {
+	save_input2 = to_string(neurons_hidden_layer.size()) + " Neurons Hidden Layer : ";
 	for (int i = 0; i < neurons_hidden_layer.size(); i++) {
+		cout << "Neurons Hidden Layer :"<< endl;
 		cout <<neurons_hidden_layer[i].get_activation() << endl;
+		save_input2 = save_input2 + to_string(neurons_hidden_layer[i].get_activation()) + " || ";
+
 
 	}
+
+
 }
 // Aufgabe 2.b
 void neural_net::getlayer_output() {
+	save_input3 = to_string(neurons_output_layer.size()) + " Neurons Output Layer : ";
+
 	for (int i = 0; i < neurons_output_layer.size(); i++) {
+		cout << "Neurons Output Layer :"<< endl;
 		cout << neurons_output_layer[i].get_activation() << endl;
+		save_input3 = save_input3 + to_string(neurons_output_layer[i].get_activation())+ " || ";
 
 	}
 }
+
 
 void neural_net::generatematrix() {
 	matrix_of_edgeweights_between_layers.set_size_1(neurons_input_layer.size());
